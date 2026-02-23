@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0f14" />
+  <title>Tilt Maze • CMatrix</title>
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- CMatrix background -->
+  <canvas id="matrix" aria-hidden="true"></canvas>
+
+  <header class="top">
+    <div class="brand">
+      <div class="title">🧱 Tilt Maze <span class="badge">CMatrix</span></div>
+      <div class="sub">Telefondı búkseń — top labirint ishinde júredi • PWA • Sound • Levels</div>
+    </div>
+
+    <div class="controls">
+      <button id="btnStart" class="btn">Start / Permission</button>
+      <button id="btnReset" class="btn btn-ghost">Reset</button>
+      <button id="btnCal" class="btn btn-ghost" disabled>Calibrate</button>
+      <button id="btnMute" class="btn btn-ghost" aria-pressed="false">Sound: ON</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <div class="stat"><span>level</span><b id="sLevel">1</b></div>
+      <div class="stat"><span>time</span><b id="sTime">0.00</b></div>
+      <div class="stat"><span>best</span><b id="sBest">—</b></div>
+      <div class="stat"><span>status</span><b id="sStatus">idle</b></div>
+      <div class="stat"><span>gamma</span><b id="sGamma">0.0</b></div>
+      <div class="stat"><span>beta</span><b id="sBeta">0.0</b></div>
+      <div class="stat"><span>moves</span><b id="sMoves">0</b></div>
+      <div class="stat"><span>fps</span><b id="sFps">—</b></div>
+    </section>
+
+    <section class="game">
+      <canvas id="cv" aria-label="maze canvas"></canvas>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+      <div class="pwa">
+        <button id="btnInstall" class="btn btn-ghost" hidden>Install App</button>
+        <span class="hint">⚠️ iPhone: “Start / Permission” basıń. HTTPS (GitHub Pages) şart.</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
